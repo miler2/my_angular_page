@@ -16,6 +16,7 @@
             "optimization": true,
             "outputPath": "docs",
             "index": "docs/browser/index.html",
+            "baseHref": "docs/browser/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
