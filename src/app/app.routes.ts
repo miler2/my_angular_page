@@ -6,6 +6,6 @@ import { MiCvComponent } from './components/mi-cv/mi-cv.component';
 
 export const routes: Routes = [
     { path: 'mi_cv', component: MiCvComponent, title: 'Mi CV' },
-    { path: '', component: LandpageComponent, title: 'Landpage' },
+    { path: 'landpage', component: LandpageComponent, title: 'Landpage' },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
