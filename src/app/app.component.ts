@@ -12,4 +12,8 @@ import { LandpageComponent } from './components/landpage/landpage.component';
 })
 export class AppComponent {
   title = 'my_angular_page';
+
+  changeTheme(){
+    
+  }
 }

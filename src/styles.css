@@ -14,6 +14,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap");
 :root,
 [data-bs-theme=light] {
+  --landpage-text-color: #000;
   --bs-blue: #158cba;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -135,6 +136,7 @@
 
 [data-bs-theme=dark] {
   color-scheme: dark;
+  --landpage-text-color: aqua;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
   --bs-body-bg: #222;
@@ -209,9 +211,13 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: #373737;
+  background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.landpage_text{
+  color: var(--landpage-text-color);
 }
 
 hr {
@@ -3381,10 +3387,6 @@ textarea.form-control-lg {
   opacity: 0;
 }
 
-.collapse:not(.show) {
-  display: none;
-}
-
 .collapsing {
   height: 0;
   overflow: hidden;
@@ -3958,6 +3960,7 @@ textarea.form-control-lg {
   display: block;
 }
 
+/* Este sí lo estoy usando */
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
@@ -3981,11 +3984,10 @@ textarea.form-control-lg {
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
+
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
@@ -3996,7 +3998,6 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: inherit;
   align-items: center;
-  justify-content: space-between;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -4040,12 +4041,6 @@ textarea.form-control-lg {
 .navbar-text a:hover,
 .navbar-text a:focus {
   color: var(--bs-navbar-active-color);
-}
-
-.navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 1;
-  align-items: center;
 }
 
 .navbar-toggler {

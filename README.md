@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ng b --base-href "https://miler2.github.io/my_angular_page/"
 
-npx angular-cli-ghpages --dir=dist
+npx angular-cli-ghpages --dir=dist/browser

@@ -14,9 +14,10 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "optimization": true,
-            "outputPath": "docs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "https://miler2.github.io/my_angular_page/",
             "polyfills": [
               "zone.js"
             ],

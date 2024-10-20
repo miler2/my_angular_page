@@ -2,3 +2,14 @@
     padding-left: 150px;
     padding-right: 150px;
 }
+
+.theme_icon{
+    width: 20px;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
