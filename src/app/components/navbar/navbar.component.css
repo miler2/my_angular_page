@@ -13,3 +13,13 @@ button {
     padding: 0;
     cursor: pointer;
 }
+
+.right_of_navbar{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+}
+
+.navbar_button{
+    width: 100px;
+}

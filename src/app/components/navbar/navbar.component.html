@@ -4,12 +4,24 @@
       <div>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="mi_cv">Mi CV</a>
+            <a class="nav-link" href="mi_cv" (click)="update_in_cv()">Mi CV</a>
           </li>
         </ul>
       </div>
     </div>
-    <div>
+    <div class="right_of_navbar">
+      <!-- <button (click)="in_cv_test()">
+        test
+      </button> -->
+      <button *ngIf="in_cv">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a href="" class="nav-link navbar_button">
+              English CV
+            </a>
+          </li>
+        </ul>
+      </button>
       <button (click)="changeTheme()">
         <img src="website_theme.png" alt="Description of my image" class="theme_icon">
       </button>
