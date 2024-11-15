@@ -13,14 +13,15 @@
       <!-- <button (click)="in_cv_test()">
         test
       </button> -->
-      <button *ngIf="in_cv">
-        <ul class="navbar-nav me-auto">
+      <button *ngIf="in_cv" (click)="change_cv_language()">
+        Cambiar idioma CV
+        <!-- <ul class="navbar-nav me-auto">
           <li class="nav-item">
             <a href="" class="nav-link navbar_button">
               English CV
             </a>
           </li>
-        </ul>
+        </ul> -->
       </button>
       <button (click)="changeTheme()">
         <img src="website_theme.png" alt="Description of my image" class="theme_icon">

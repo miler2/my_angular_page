@@ -1,8 +1,11 @@
 import { Component, AfterContentInit } from '@angular/core';
-import { NavbarRoutingServiceService } from '../../services/navbar-routing-service.service';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+
+// Services
+import { NavbarRoutingServiceService } from '../../services/navbar-routing-service.service';
+import { LanguagesService } from '../../services/languages.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,14 +16,18 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent implements AfterContentInit{
   in_cv!: boolean;
+  cv_language: string = "spanish";
 
   constructor(
     private router: Router,
-    private navbarRoutingService: NavbarRoutingServiceService
+    private navbarRoutingService: NavbarRoutingServiceService,
+    private languagesService: LanguagesService
   )
   {}
 
   ngAfterContentInit(){
+    // This is to show "Cambiar idioma CV" in the navbar
+
     // Listen to route changes using Router events
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -36,9 +43,11 @@ export class NavbarComponent implements AfterContentInit{
       next: (data) => {
         this.in_cv = data;
       }
-    })
+    });
   }
 
+  // BUTTON "CAMBIAR IDIOMA CV"
+  // Si está en la url "mi_cv" muestra el botón "Cambiar idioma CV"
   update_in_cv(){
     this.navbarRoutingService.is_user_in_mi_cv();
   }
@@ -56,5 +65,11 @@ export class NavbarComponent implements AfterContentInit{
     } else {
       alert('There was an error changing the theme...');
     }
+  }
+
+
+  // CV LANGUAGE
+  change_cv_language(){
+    this.languagesService.change_cv_language();
   }
 }
