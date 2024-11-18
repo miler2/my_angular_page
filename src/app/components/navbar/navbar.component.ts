@@ -2,10 +2,12 @@ import { Component, AfterContentInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 
 // Services
 import { NavbarRoutingServiceService } from '../../services/navbar-routing-service.service';
 import { LanguagesService } from '../../services/languages.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -17,11 +19,13 @@ import { LanguagesService } from '../../services/languages.service';
 export class NavbarComponent implements AfterContentInit{
   in_cv!: boolean;
   cv_language: string = "spanish";
+  page_theme!: string;
 
   constructor(
     private router: Router,
     private navbarRoutingService: NavbarRoutingServiceService,
-    private languagesService: LanguagesService
+    private languagesService: LanguagesService,
+    private cookies: CookieService
   )
   {}
 
@@ -44,8 +48,11 @@ export class NavbarComponent implements AfterContentInit{
         this.in_cv = data;
       }
     });
+
+    this.updateTheme();
   }
 
+  // --------------------------------------------------------------------------------------------------------------------------------------------
   // BUTTON "CAMBIAR IDIOMA CV"
   // Si está en la url "mi_cv" muestra el botón "Cambiar idioma CV"
   update_in_cv(){
@@ -53,21 +60,61 @@ export class NavbarComponent implements AfterContentInit{
   }
 
 
+  // --------------------------------------------------------------------------------------------------------------------------------------------
   // PAGE THEMES
-  changeTheme(){
-    const themeElement = document.body;
-    const theme = themeElement.getAttribute('data-bs-theme');
+  // Possible themes are "light" and "dark"
 
-    if (theme === "dark"){
-      themeElement.setAttribute('data-bs-theme', 'light');
-    } else if (theme === "light"){
-      themeElement.setAttribute('data-bs-theme', 'dark');
+  /* In order to see what is the current theme when we reload the page we will need an observable,
+  because when we reload the page the cookie takes longer to load than the code does to execute, so it uses the default value we give it here
+  and not the one the cookie has. For that reason we need to use an observable that continuesly gives updates to the variable, and if it changes
+  another function can use it properly. */
+  /* private currentPageTheme = new BehaviorSubject<string>("dark");
+  currentPageThemeData$ = this.currentPageTheme.asObservable(); */
+
+  //Theme Cookies
+  setThemeToken(value: string){
+    this.cookies.set("theme", value)
+  }
+
+  getThemeToken(): Observable<string>{
+    return new Observable<string>((data) => {
+      data.next(this.cookies.get("theme"));
+    })
+  }
+
+  //This changes the variable for the CSS
+  /* "data-bs-theme" is the variable for the css to select what theme we want.
+  In order to change this we need to change the variable that is in the main html, "index.html".
+  That's why I'm using document.body, to find that variable and change it after. */
+  updateTheme(){
+    this.getThemeToken().subscribe({
+      next: (data) => {
+        if (data === "dark"){
+          document.body.setAttribute('data-bs-theme', 'dark'); // Change the actual CSS variable
+        } else if (data === "light"){
+          document.body.setAttribute('data-bs-theme', 'light');  // Change the actual CSS variable
+        } else {
+          console.warn('There was an error changing the theme...');
+        }
+      }
+    })
+  }
+
+  changeTheme(){
+    if (this.cookies.get("theme") === "dark"){
+      document.body.setAttribute('data-bs-theme', 'light'); // Change the actual CSS variable
+      this.setThemeToken("light");                          // Update the cookie status so we can use it in the future
+    } else if (this.cookies.get("theme") === "light"){
+      document.body.setAttribute('data-bs-theme', 'dark');  // Change the actual CSS variable
+      this.setThemeToken("dark");                           // Update the cookie status so we can use it in the future
     } else {
-      alert('There was an error changing the theme...');
+      console.warn('There was an error changing the theme...');
     }
   }
 
 
+
+  // --------------------------------------------------------------------------------------------------------------------------------------------
   // CV LANGUAGE
   change_cv_language(){
     this.languagesService.change_cv_language();
