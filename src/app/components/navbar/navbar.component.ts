@@ -63,29 +63,23 @@ export class NavbarComponent implements AfterContentInit{
   // --------------------------------------------------------------------------------------------------------------------------------------------
   // PAGE THEMES
   // Possible themes are "light" and "dark"
-
-  /* In order to see what is the current theme when we reload the page we will need an observable,
-  because when we reload the page the cookie takes longer to load than the code does to execute, so it uses the default value we give it here
-  and not the one the cookie has. For that reason we need to use an observable that continuesly gives updates to the variable, and if it changes
-  another function can use it properly. */
-  /* private currentPageTheme = new BehaviorSubject<string>("dark");
-  currentPageThemeData$ = this.currentPageTheme.asObservable(); */
-
-  //Theme Cookies
   setThemeToken(value: string){
     this.cookies.set("theme", value)
   }
 
+  /* In order to see what is the current theme when we reload the page we will need an observable,
+  because when we reload the page the cookie takes longer to load than the code does to execute, so it uses the default value we give it here
+  and not the one the cookie has. For that reason we need to use an observable that continuesly gives updates to the variable, and if it changes
+  "updateTheme" can use it properly. */
   getThemeToken(): Observable<string>{
     return new Observable<string>((data) => {
       data.next(this.cookies.get("theme"));
     })
   }
 
-  //This changes the variable for the CSS
   /* "data-bs-theme" is the variable for the css to select what theme we want.
   In order to change this we need to change the variable that is in the main html, "index.html".
-  That's why I'm using document.body, to find that variable and change it after. */
+  That's why I'm using document.body, to find that variable and then change it. */
   updateTheme(){
     this.getThemeToken().subscribe({
       next: (data) => {
@@ -100,6 +94,7 @@ export class NavbarComponent implements AfterContentInit{
     })
   }
 
+  // This is what is activated when we press the button to change the theme in the website
   changeTheme(){
     if (this.cookies.get("theme") === "dark"){
       document.body.setAttribute('data-bs-theme', 'light'); // Change the actual CSS variable
