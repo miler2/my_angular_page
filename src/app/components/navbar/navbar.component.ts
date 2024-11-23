@@ -62,7 +62,7 @@ export class NavbarComponent implements AfterContentInit{
   // PAGE THEMES
   // Possible themes are "light" and "dark"
   setThemeToken(value: string){
-    document.cookie = "theme=" + value + ";path=/";
+    document.cookie = "theme=" + value + ";path=/"; // The path is important for clarifying where we want it to be saved. In the static website it does not save properly
   }
 
   /* In order to see what is the current theme when we reload the page we will need an observable,
