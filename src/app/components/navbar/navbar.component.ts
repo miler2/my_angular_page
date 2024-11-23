@@ -62,7 +62,7 @@ export class NavbarComponent implements AfterContentInit{
   // PAGE THEMES
   // Possible themes are "light" and "dark"
   setThemeToken(value: string){
-    document.cookie = "theme=" + value;
+    document.cookie = "theme=" + value + ";path=/";
   }
 
   /* In order to see what is the current theme when we reload the page we will need an observable,
