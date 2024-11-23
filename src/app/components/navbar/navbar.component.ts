@@ -2,12 +2,11 @@ import { Component, AfterContentInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { CookieService } from 'ngx-cookie-service';
 
 // Services
 import { NavbarRoutingServiceService } from '../../services/navbar-routing-service.service';
 import { LanguagesService } from '../../services/languages.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -25,7 +24,6 @@ export class NavbarComponent implements AfterContentInit{
     private router: Router,
     private navbarRoutingService: NavbarRoutingServiceService,
     private languagesService: LanguagesService,
-    private cookies: CookieService
   )
   {}
 
@@ -64,46 +62,81 @@ export class NavbarComponent implements AfterContentInit{
   // PAGE THEMES
   // Possible themes are "light" and "dark"
   setThemeToken(value: string){
-    this.cookies.set("theme", value)
+    document.cookie = "theme=" + value;
   }
 
   /* In order to see what is the current theme when we reload the page we will need an observable,
   because when we reload the page the cookie takes longer to load than the code does to execute, so it uses the default value we give it here
   and not the one the cookie has. For that reason we need to use an observable that continuesly gives updates to the variable, and if it changes
   "updateTheme" can use it properly. */
-  getThemeToken(): Observable<string>{
+  getThemeTokenObservable(): Observable<string>{
     return new Observable<string>((data) => {
-      data.next(this.cookies.get("theme"));
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let cookie_array = decodedCookie.split(';');
+
+      for (let i = 0; i < cookie_array.length; i++){
+        let cookie = cookie_array[i].split("=");
+        if (cookie[0] = "theme"){
+          data.next(cookie[1])
+        }
+      }
+
+      data.next(document.cookie);
     })
   }
 
-  /* "data-bs-theme" is the variable for the css to select what theme we want.
+  // We cannot use the above function because it returns an observable, so for functions that need a string only at a specific time, we use this instead.
+  getThemeToken(){
+    let theme_var;
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookie_array = decodedCookie.split(';');
+
+    for (let i = 0; i < cookie_array.length; i++){
+      let cookie = cookie_array[i].split("=");  // This divides the current cookie (for example "theme=dark") into name and value
+
+      // cookie[0] is the name of the cookie
+      // cookie[1] is the value of the cookie
+      if (cookie[0] = "theme"){
+        theme_var = cookie[1];
+      }
+    }
+
+    return theme_var;
+  }
+
+  /* "data-bs-theme" 
+  is the variable for the css to select what theme we want.
   In order to change this we need to change the variable that is in the main html, "index.html".
   That's why I'm using document.body, to find that variable and then change it. */
+
+  // This gets executed when the component finishes loading
+  // It looks for the cookie. If it does not exist it creates it with "dark", if it does it checks if it is light or dark and changes the css acordingly
   updateTheme(){
-    this.getThemeToken().subscribe({
+    this.getThemeTokenObservable().subscribe({
       next: (data) => {
         if (data === "dark"){
-          document.body.setAttribute('data-bs-theme', 'dark'); // Change the actual CSS variable
+          document.body.setAttribute('data-bs-theme', 'dark');    // Change the actual CSS variable
         } else if (data === "light"){
-          document.body.setAttribute('data-bs-theme', 'light');  // Change the actual CSS variable
-        } else {
-          console.warn('There was an error changing the theme...');
+          document.body.setAttribute('data-bs-theme', 'light');   // Change the actual CSS variable
         }
       }
-    })
+    });
   }
 
   // This is what is activated when we press the button to change the theme in the website
+  // It also initialices the cookie if there is none set.
   changeTheme(){
-    if (this.cookies.get("theme") === "dark"){
+    if (this.getThemeToken() === "dark"){
       document.body.setAttribute('data-bs-theme', 'light'); // Change the actual CSS variable
       this.setThemeToken("light");                          // Update the cookie status so we can use it in the future
-    } else if (this.cookies.get("theme") === "light"){
-      document.body.setAttribute('data-bs-theme', 'dark');  // Change the actual CSS variable
-      this.setThemeToken("dark");                           // Update the cookie status so we can use it in the future
+    } else if (this.getThemeToken() === "light"){
+      document.body.setAttribute('data-bs-theme', 'dark');
+      this.setThemeToken("dark");
+    } else if (this.getThemeToken() !== "light" && this.getThemeToken() !== "dark"){  // This gets executed if the cookie does not exist or it does not have a correct value.
+      document.body.setAttribute('data-bs-theme', 'light');
+      this.setThemeToken("light"); 
     } else {
-      console.warn('There was an error changing the theme...');
+      alert('There was an error changing the theme...');    // If this executed you fucked up
     }
   }
 
