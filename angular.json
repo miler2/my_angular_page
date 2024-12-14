@@ -25,10 +25,14 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/styles"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/app/styles/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -93,7 +97,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/app/styles/styles.css"
             ],
             "scripts": []
           }
@@ -103,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3c4f191c-5b41-44dc-b2a7-971ec1ac16b1"
   }
 }

@@ -48,6 +48,14 @@ export class NavbarComponent implements AfterContentInit{
     });
 
     this.updateTheme();
+
+    this.selectStyle();
+  }
+
+
+  // TESTS
+  selectStyle(){
+    document.head.setAttribute('title', 'MyAngularPage');
   }
 
   // --------------------------------------------------------------------------------------------------------------------------------------------
