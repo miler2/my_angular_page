@@ -3,9 +3,6 @@
     align-items: center;
     justify-content: space-between;
 
-    /* Padding */
-    padding: 10px 25px 10px 30px;
-
     /* Color */
     background-color: rgba(var(--navbar-background-color), 1) !important;
 
