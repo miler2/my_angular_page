@@ -3,6 +3,10 @@ body{
     margin: 0px;
 }
 
+.navbar {
+    padding: 10px 25px 10px 30px;
+}
+
 /* I should integrate this better (should be in landpage css, but it needs to change depending on the device) */
 .landpage_text{
     margin: 30px;
