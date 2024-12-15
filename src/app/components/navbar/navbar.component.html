@@ -1,28 +1,18 @@
-<nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="">Home</a>
-      <div>
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="mi_cv" (click)="update_in_cv()">Mi CV</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="right_of_navbar">
-      <button *ngIf="in_cv" (click)="change_cv_language()">
-        Cambiar idioma CV
-        <!-- This is commented because it does not work, but i want to keep it to see what's the structure that i need in order to use the css "properly" -->
-        <!-- <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a href="" class="nav-link navbar_button">
-              English CV
-            </a>
-          </li>
-        </ul> -->
-      </button>
-      <button (click)="changeTheme()">
-        <img src="website_theme.png" alt="Description of my image" class="theme_icon">
-      </button>
-    </div>
-  </nav>
+<nav class="navbar container-fluid">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Home</a>
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" href="mi_cv" (click)="update_in_cv()">Mi CV</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container-fluid">
+    <button *ngIf="in_cv" (click)="change_cv_language()" class="nav-link">
+      Cambiar idioma CV
+    </button>
+    <button (click)="changeTheme()">
+      <img src="website_theme.png" alt="Description of my image" class="navbar_theme_icon_image">
+    </button>
+  </div>
+</nav>

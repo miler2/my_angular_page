@@ -3,26 +3,107 @@
 /* General variables */
 :root {
     --font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --navbar-background-color: 21, 140, 186;
 }
 
 [data-bs-theme=light] {
     --body-background-color: #fff;
-    --body-color: #222;
+    --default-text-color: #222;
     --landpage-text-color: #000;
+    --emphasis-color-rgb: 0, 0, 0;
 }
 
 [data-bs-theme=dark] {
     --body-background-color: #333;
-    --body-color: #dee2e6;
+    --default-text-color: #dee2e6;
     --landpage-text-color: rgb(24, 210, 210);
+    --emphasis-color-rgb: 255, 255, 255;
 }
 
 body{
+    /* Color */
     background-color: var(--body-background-color);
-    color: var(--body-color);
     font-family: var(--font-family);
 }
 
-.landpage_text{
-    color: var(--landpage-text-color);
+.container-fluid {
+  display: flex;
+  align-items: inherit;
+}
+
+button {
+    /* Cursor */
+    cursor: pointer;    /* Shows the mouse cursor as a pointer (shows you can click the button) */
+
+    /* Removing default values */
+    background: none;
+    border: none;
+    padding: 0;
+
+    /* Style */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* NAVBAR */
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.navbar {
+    /* Alignment */
+    align-items: center;
+    justify-content: space-between;
+
+    /* Padding */
+    padding: 10px 25px 10px 30px;
+
+    /* Color */
+    background-color: rgba(var(--navbar-background-color), 1) !important;
+
+    /* Border */
+    border-style: solid;
+    border-width: 0px 0px 4px 0px;
+    border-color: #137ea7;
+}
+
+/* Main navbar link (redirects to "home" page) */
+.navbar-brand {
+    color: var(--default-text-color);
+}
+
+/* This is for navigation html lists */
+.navbar-nav {
+    /* Alignment */
+    margin: 0 0 0 30px;
+    padding: 0px;
+
+    /* List style */
+    list-style: none;   /* This remove the "dots" from the html list */
+}
+
+.nav-link {
+    /* Style */
+    text-decoration: none;
+    color: rgba(var(--emphasis-color-rgb), 0.65);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;    /* This is for when I hover in the link */
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: rgba(var(--emphasis-color-rgb), 0.8);
+}
+
+.navbar_theme_icon_image {
+    margin: 4px 0 0 15px;
+    width: 20px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* This is for displaying the pdf using iframe */
+iframe {
+    border: 0;
 }
