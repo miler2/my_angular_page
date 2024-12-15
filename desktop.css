@@ -14,3 +14,7 @@ h1 {
 body{
   margin: 0;
 }
+
+.fixed-bottom{
+  font-size: 13px;
+}
