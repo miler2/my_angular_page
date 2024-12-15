@@ -4,6 +4,11 @@
 .landpage_text{
   text-align: center;
   margin-top: 130px;
+  font-size: 20px;
+}
+
+h1 {
+  font-weight: 500;
 }
 
 body{

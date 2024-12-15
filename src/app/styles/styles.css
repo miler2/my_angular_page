@@ -14,7 +14,7 @@
 }
 
 [data-bs-theme=dark] {
-    --body-background-color: #333;
+    --body-background-color: #222;
     --default-text-color: #dee2e6;
     --landpage-text-color: rgb(24, 210, 210);
     --emphasis-color-rgb: 255, 255, 255;
@@ -49,59 +49,6 @@ button {
 a {
     text-decoration: none;
 }
-
-
-/* NAVBAR */
-/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.navbar {
-    /* Alignment */
-    align-items: center;
-    justify-content: space-between;
-
-    /* Padding */
-    padding: 10px 25px 10px 30px;
-
-    /* Color */
-    background-color: rgba(var(--navbar-background-color), 1) !important;
-
-    /* Border */
-    border-style: solid;
-    border-width: 0px 0px 4px 0px;
-    border-color: #137ea7;
-}
-
-/* Main navbar link (redirects to "home" page) */
-.navbar-brand {
-    color: var(--default-text-color);
-}
-
-/* This is for navigation html lists */
-.navbar-nav {
-    /* Alignment */
-    margin: 0 0 0 30px;
-    padding: 0px;
-
-    /* List style */
-    list-style: none;   /* This remove the "dots" from the html list */
-}
-
-.nav-link {
-    /* Style */
-    text-decoration: none;
-    color: rgba(var(--emphasis-color-rgb), 0.65);
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;    /* This is for when I hover in the link */
-}
-
-.nav-link:hover, .nav-link:focus {
-    color: rgba(var(--emphasis-color-rgb), 0.8);
-}
-
-.navbar_theme_icon_image {
-    margin: 4px 0 0 15px;
-    width: 20px;
-}
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* This is for displaying the pdf using iframe */
 iframe {
