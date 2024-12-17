@@ -7,7 +7,11 @@
 }
 
 h1{
+    /* Margin - Padding */
     margin-bottom: 0;
+
+    /* Styles */
+    font-weight: var(--devices-h1-font-weight);
 }
 
 p{
@@ -16,24 +20,32 @@ p{
 
 /* I need to introduce this better depending if i'm on the pc or phone. */
 /* I need to make this with the service and use the variable to select what type i'll choose */
-/* .landpage_text{
+.landpage_text{
     text-align: center;
-    margin-top: 130px;
-} */
-
-.fixed-bottom{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    margin: var(--devices-landpage_text-margin);
 }
 
-.fixed-bottom > a {
-  color: var(--landpage-text-color);
-  font-weight: 800;
+.fixed_bottom{
+    /* Structure */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Styles */
+    font-size: var(--devices-fixed_bottom-font-size);
+}
+
+.fixed_bottom > a {
+    color: var(--landpage-text-color);
+    font-weight: 800;
 }
 
 .landpage_text{
+    /* Margin - Padding */
+    margin: var(--devices-landpage_text-margin);
+
+    /* Styles */
     color: var(--landpage-text-color);
 }
 

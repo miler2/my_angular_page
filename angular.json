@@ -89,6 +89,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/styles"
               }
             ],
             "styles": [

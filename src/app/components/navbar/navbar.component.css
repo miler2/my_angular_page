@@ -1,9 +1,11 @@
 .navbar {
+    /* Structure */
+    padding: var(--devices-navbar-padding);
+    
     /* Alignment */
-    align-items: center;
     justify-content: space-between;
 
-    /* Color */
+    /* Background color */
     background-color: rgba(var(--navbar-background-color), 1) !important;
 
     /* Border */
@@ -13,32 +15,45 @@
 }
 
 /* Main navbar link (redirects to "home" page) */
-.navbar-brand {
+.navbar_brand {
+    /* Margin - Padding */
+    margin-right: var(--devices-navbar_brand-margin-right);
+
+    /* Font style */
     color: var(--default-text-color);
+    font-size: 22px;
 }
 
 /* This is for navigation html lists */
-.navbar-nav {
-    /* Alignment */
-    margin: 0 0 0 30px;
+.navbar_nav {
+    /* Margin - Padding */
+    margin: 5px 0 0 0;
     padding: 0px;
 
     /* List style */
     list-style: none;   /* This remove the "dots" from the html list */
 }
 
-.nav-link {
+.nav_link {
+    /* Margin - Padding */
+    margin-left: 24px;
+
     /* Style */
     text-decoration: none;
     color: rgba(var(--emphasis-color-rgb), 0.65);
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;    /* This is for when I hover in the link */
+    font-size: var(--devices-nav_link-font-size);
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav_link:hover, .nav_link:focus {
     color: rgba(var(--emphasis-color-rgb), 0.8);
 }
 
+.link_on_the_right {
+    width: var(--devices-link_on_the_right-width);
+}
+
 .navbar_theme_icon_image {
-    margin: 4px 0 0 15px;
-    width: 20px;
+    width: 22px;
+    margin: var(--devices-navbar_theme_icon_image-margin);
 }

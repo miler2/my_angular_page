@@ -19,6 +19,5 @@ export class AppComponent {
     private deviceDetectionService: DeviceDetectionService,
   ) {
     this.deviceDetectionService.deviceDetection();
-    this.deviceDetectionService.loadStylesheet();
   }
 }

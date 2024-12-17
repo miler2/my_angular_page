@@ -6,6 +6,8 @@
     --navbar-background-color: 21, 140, 186;
 }
 
+/* THEME VARIABLES */
+/* ********************************************************* */
 [data-bs-theme=light] {
     --body-background-color: #fff;
     --default-text-color: #222;
@@ -15,20 +17,99 @@
 
 [data-bs-theme=dark] {
     --body-background-color: #222;
-    --default-text-color: #dee2e6;
+    --default-text-color: #d6ebff;
     --landpage-text-color: rgb(24, 210, 210);
     --emphasis-color-rgb: 255, 255, 255;
 }
+/* ********************************************************* */
+
+/* DEVICE VARIABLES */
+/* ********************************************************* */
+[device=mobile] {
+    /* body */
+    --devices-body-font-size: 13px;
+    
+    /* NAVBAR */
+    /* ---------------------------------------------------- */
+    /* navbar */
+    --devices-navbar-padding: 10px 25px 10px 30px;
+    
+    /* navbar_brand */
+    --devices-navbar_brand-margin-right: 0px;
+    
+    /* nav_link */
+    --devices-nav_link-font-size: 15px;
+    
+    /* link_on_the_right */
+    --devices-link_on_the_right-width: 70px;
+    
+    /* navbar_theme_icon_image */
+    --devices-navbar_theme_icon_image-margin: 5px 0 0 10px;
+    /* ---------------------------------------------------- */
+    
+    /* LANDPAGE */
+    /* ---------------------------------------------------- */
+    /* h1 */
+    /* --devices-h1-font-weight: 500; */
+
+    /* landpage_text */
+    --devices-landpage_text-margin: 100px 30px 0 30px;
+    
+    /* fixed_bottom */
+    --devices-fixed_bottom-font-size: 9px;
+    /* ---------------------------------------------------- */
+}
+
+[device=desktop] {
+    /* body */
+    /* --devices-body-font-size: 13px; */
+
+    /* NAVBAR */
+    /* ---------------------------------------------------- */
+    /* navbar */
+    --devices-navbar-padding: 10px 400px 10px 400px;
+    
+    /* navbar_brand */
+    --devices-navbar_brand-margin-right: 26px;
+    
+    /* nav_link */
+    --devices-nav_link-font-size: 17px;
+    
+    /* link_on_the_right */
+    /* --devices-link_on_the_right-width: 70px; */
+    
+    /* navbar_theme_icon_image */
+    --devices-navbar_theme_icon_image-margin: 5px 0 0 15px;
+    /* ---------------------------------------------------- */
+    
+    /* LANDPAGE */
+    /* ---------------------------------------------------- */
+    /* h1 */
+    --devices-h1-font-weight: 500;
+
+    /* landpage_text */
+    --devices-landpage_text-margin: 130px 0 0 0;
+    
+    /* fixed_bottom */
+    --devices-fixed_bottom-font-size: 13px;
+    /* ---------------------------------------------------- */
+}
+/* ********************************************************* */
 
 body{
+    /* Structure */
+    margin: 0px;
+
     /* Color */
     background-color: var(--body-background-color);
     font-family: var(--font-family);
+    font-size: var(--devices-body-font-size);
 }
 
-.container-fluid {
+/* This is for giving flex to html giving it the class, instead of writting this every time */
+.container_fluid {
   display: flex;
-  align-items: inherit;
+  align-items: center;
 }
 
 button {
