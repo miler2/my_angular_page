@@ -1,33 +1,58 @@
 @charset "UTF-8";
 
 /* General variables */
+/* :root is needed to be written on every component that i want to use variables on, without it, it wont load properly the variables */
 :root {
     --font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --navbar-background-color: 21, 140, 186;
 }
 
 /* THEME VARIABLES */
 /* ********************************************************* */
-[data-bs-theme=light] {
-    --body-background-color: #fff;
+[theme=light] {
+    /* general reusable values */
     --default-text-color: #222;
-    --landpage-text-color: #000;
     --emphasis-color-rgb: 0, 0, 0;
+
+    /* BODY (general values) */
+    --body-background: 
+        radial-gradient(circle at top left, #3b82f6, transparent 40%),
+        radial-gradient(circle at bottom right, #ec4899, transparent 40%),
+        linear-gradient(180deg, #bebebe, #bebebe);
+
+        min-height: 100vh;
+
+    /* LANDPAGE */
+    --landpage-main_text-color: #000;
+    --landpage-p_text-color: rgb(0, 54, 75);
 }
 
-[data-bs-theme=dark] {
-    --body-background-color: #222;
+[theme=dark] {
+    /* general reusable values */
     --default-text-color: #d6ebff;
-    --landpage-text-color: rgb(24, 210, 210);
     --emphasis-color-rgb: 255, 255, 255;
+
+    /* BODY (general values) */
+    --body-background: 
+        radial-gradient(circle at top left, #3b82f6, transparent 40%),
+        radial-gradient(circle at bottom right, #ec4899, transparent 40%),
+        linear-gradient(180deg, #0f172a, #020617);
+
+        min-height: 100vh;
+
+    /* LANDPAGE */
+    --landpage-main_text-color: rgb(24, 210, 210);
+    --landpage-p_text-color: rgb(191, 241, 241);
 }
 /* ********************************************************* */
 
 /* DEVICE VARIABLES */
 /* ********************************************************* */
 [device=mobile] {
-    /* body */
+    /* BODY (general values) */
+    /* ---------------------------------------------------- */
     --devices-body-font-size: 13px;
+    /* ---------------------------------------------------- */
+
     
     /* NAVBAR */
     /* ---------------------------------------------------- */
@@ -46,18 +71,23 @@
     /* navbar_theme_icon_image */
     --devices-navbar_theme_icon_image-margin: 5px 0 0 10px;
     /* ---------------------------------------------------- */
+
     
     /* LANDPAGE */
     /* ---------------------------------------------------- */
     /* h1 */
-    /* --devices-h1-font-weight: 500; */
+    --devices-h1-font-weight: 500;
 
     /* landpage_text */
-    --devices-landpage_text-margin: 100px 30px 0 30px;
+    --devices-landpage_intro_text-margin: 100px 30px 0 30px;
+
+    /* landpage_intro */
+    --devices-landpage_intro-font-weight: 350;
     
     /* fixed_bottom */
     --devices-fixed_bottom-font-size: 9px;
     /* ---------------------------------------------------- */
+
 
     /* LINK_TREE */
     /* ---------------------------------------------------- */
@@ -67,13 +97,16 @@
 }
 
 [device=desktop] {
-    /* body */
-    /* --devices-body-font-size: 13px; */
+    /* BODY (general values) */
+    /* ---------------------------------------------------- */
+    --devices-body-font-size: 19px;
+    /* ---------------------------------------------------- */
+    
 
     /* NAVBAR */
     /* ---------------------------------------------------- */
     /* navbar */
-    --devices-navbar-padding: 10px 400px 10px 400px;
+    --devices-navbar-padding: 10px 130px 10px 200px;
     
     /* navbar_brand */
     --devices-navbar_brand-margin-right: 26px;
@@ -88,24 +121,28 @@
     --devices-navbar_theme_icon_image-margin: 5px 0 0 15px;
     /* ---------------------------------------------------- */
     
+
     /* LANDPAGE */
     /* ---------------------------------------------------- */
     /* h1 */
     --devices-h1-font-weight: 500;
 
     /* landpage_text */
-    --devices-landpage_text-margin: 130px 0 0 0;
+    --devices-landpage_intro_text-margin: 50px 0 0 0;
+
+    /* landpage_intro */
+    --devices-landpage_intro-font-weight: 350;
     
     /* fixed_bottom */
     --devices-fixed_bottom-font-size: 13px;
     /* ---------------------------------------------------- */
+
 
     /* LINK_TREE */
     /* ---------------------------------------------------- */
     --devices-list_body-margin-top: 100px;
     --devices-list_body-width: 700px;
     /* ---------------------------------------------------- */
-
 }
 /* ********************************************************* */
 
@@ -114,15 +151,36 @@ body{
     margin: 0px;
 
     /* Color */
-    background-color: var(--body-background-color);
+    /* background-color: var(--body-background-color); */
     font-family: var(--font-family);
     font-size: var(--devices-body-font-size);
+
+    background: var(--body-background);
 }
 
-/* This is for giving flex to html giving it the class, instead of writting this every time */
+h1{
+    /* Structure */
+    margin-bottom: 0;
+
+    /* Styles */
+    font-weight: var(--devices-h1-font-weight);
+    color: var(--landpage-main_text-color);
+}
+
+h2 {
+    margin: 0px;
+    color: var(--landpage-main_text-color);
+}
+
+p{
+    margin: 0px;
+    color: var(--landpage-p_text-color);
+}
+
 .container_fluid {
-  display: flex;
-  align-items: center;
+    /* Structure */
+    display: flex;
+    align-items: center;
 }
 
 button {
@@ -142,9 +200,4 @@ button {
 
 a {
     text-decoration: none;
-}
-
-/* This is for displaying the pdf using iframe */
-iframe {
-    border: 0;
 }

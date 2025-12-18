@@ -123,9 +123,9 @@ export class NavbarComponent implements AfterContentInit{
     this.getThemeTokenObservable().subscribe({
       next: (data) => {
         if (data === "dark"){
-          document.body.setAttribute('data-bs-theme', 'dark');    // Change the actual CSS variable
+          document.body.setAttribute('theme', 'dark');    // Change the actual CSS variable
         } else if (data === "light"){
-          document.body.setAttribute('data-bs-theme', 'light');   // Change the actual CSS variable
+          document.body.setAttribute('theme', 'light');   // Change the actual CSS variable
         }
       }
     });
@@ -135,13 +135,13 @@ export class NavbarComponent implements AfterContentInit{
   // It also initialices the cookie if there is none set.
   changeTheme(){
     if (this.getThemeToken() === "dark"){
-      document.body.setAttribute('data-bs-theme', 'light'); // Change the actual CSS variable
+      document.body.setAttribute('theme', 'light'); // Change the actual CSS variable
       this.setThemeToken("light");                          // Update the cookie status so we can use it in the future
     } else if (this.getThemeToken() === "light"){
-      document.body.setAttribute('data-bs-theme', 'dark');
+      document.body.setAttribute('theme', 'dark');
       this.setThemeToken("dark");
     } else if (this.getThemeToken() !== "light" && this.getThemeToken() !== "dark"){  // This gets executed if the cookie does not exist or it does not have a correct value.
-      document.body.setAttribute('data-bs-theme', 'light');
+      document.body.setAttribute('theme', 'light');
       this.setThemeToken("light"); 
     } else {
       alert('There was an error changing the theme...');    // If this executed you fucked up

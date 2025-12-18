@@ -1,30 +1,72 @@
-[data-bs-theme=light] {
-    --landpage-text-color: #000;
+.landpage {
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    /* Structure */
+    text-align: center;
 }
 
-[data-bs-theme=dark] {
-    --landpage-text-color: rgb(24, 210, 210);
+/* Intro */
+/* --------------------------------------------------------------------------------------------------- */
+.landpage_intro_text{
+    /* Structure */
+    margin: var(--devices-landpage_intro_text-margin);
 }
 
-h1{
-    /* Margin - Padding */
-    margin-bottom: 0;
+.landpage_intro {
+    /* Structure */
+    margin-bottom: 25px;
 
     /* Styles */
-    font-weight: var(--devices-h1-font-weight);
+    font-weight: var(--devices-landpage_intro-font-weight);
+}
+/* --------------------------------------------------------------------------------------------------- */
+
+
+/* Landpage sections */
+/* --------------------------------------------------------------------------------------------------- */
+.landpage_sections {
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+
+    /* Structure */
+    width: 90%;
 }
 
-p{
-    margin-top: 10px;
+.landpage_section{
+    /* Structure */
+    padding: 20px;
+    /* width: 700px; */
+
+    /* Styles */
+    /* background-color: var(--landpage-landpage_sections-background-color); */
+    background: rgba(15, 23, 42, 0.226);
+    backdrop-filter: blur(40px);
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color:rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
 }
 
-/* I need to introduce this better depending if i'm on the pc or phone. */
-/* I need to make this with the service and use the variable to select what type i'll choose */
-.landpage_text{
-    text-align: center;
-    margin: var(--devices-landpage_text-margin);
+.landpage_section_left {
+    /* Structure */
+    text-align: left;
 }
 
+.landpage_section_right {
+    /* Structure */
+    text-align: right;
+}
+/* --------------------------------------------------------------------------------------------------- */
+
+/* Fixed bottom */
+/* --------------------------------------------------------------------------------------------------- */
 .fixed_bottom{
     /* Structure */
     position: absolute;
@@ -37,20 +79,8 @@ p{
 }
 
 .fixed_bottom > a {
-    color: var(--landpage-text-color);
+    color: var(--landpage-main_text-color);
     font-weight: 800;
 }
 
-.landpage_text{
-    /* Margin - Padding */
-    margin: var(--devices-landpage_text-margin);
-
-    /* Styles */
-    color: var(--landpage-text-color);
-}
-
-.main_text {
-    /* Need to integrate this better for different devices */
-    /* font-size: 12px; */
-    font-weight: 300;
-}
+/* --------------------------------------------------------------------------------------------------- */
