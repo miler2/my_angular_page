@@ -4,20 +4,14 @@
     margin-top: var(--devices-list_body-margin-top);
 }
 
-.list_title {
-    color: var(--landpage-text-color);
-}
-
-/* .list_parent {
-
-} */
-
 .list_child {
+    /* Flexbox */
+    justify-content: center;
+
     /* Structure */
     width: var(--devices-list_body-width);
     height: 70px;
     margin-top: 40px;
-    justify-content: center;    /* This aligns it horizontaly only here */
 
     /* Styles */
     background-color: #7e7e7e74;
