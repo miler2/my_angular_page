@@ -160,7 +160,7 @@ body{
 
 h1{
     /* Structure */
-    margin-bottom: 0;
+    margin: 0px;
 
     /* Styles */
     font-weight: var(--devices-h1-font-weight);
@@ -170,6 +170,11 @@ h1{
 h2 {
     margin: 0px;
     color: var(--landpage-main_text-color);
+}
+
+h3 {
+    margin: 0px;
+    color: var(--landpage-p_text-color);
 }
 
 p{

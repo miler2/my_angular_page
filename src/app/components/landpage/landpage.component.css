@@ -3,10 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 55px;
 
     /* Structure */
     text-align: center;
+    padding-top: 4px;   /* This padding is equal to the border width of navbar */
+    padding-bottom: 60px;
 }
 
 /* Intro */
@@ -14,6 +16,16 @@
 .landpage_intro_text{
     /* Structure */
     margin: var(--devices-landpage_intro_text-margin);
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 26px;
+
+    /* Style */
+    backdrop-filter: blur(100px);
+    background-color: rgba(0, 1, 68, 0.178);
+
+    /* Border */
+    border-bottom: 2px solid rgba(0, 26, 83, 0.336);
 }
 
 .landpage_intro {
@@ -33,49 +45,97 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 32px;
+    gap: 55px;
 
     /* Structure */
-    width: 90%;
+    /* width: 90%; */
 }
 
 .landpage_section{
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+
     /* Structure */
     padding: 20px;
-    /* width: 700px; */
+    width: 60%;
 
     /* Styles */
     /* background-color: var(--landpage-landpage_sections-background-color); */
-    background: rgba(15, 23, 42, 0.226);
+    background-color: rgba(15, 23, 42, 0.226);
     backdrop-filter: blur(40px);
+    text-align: left;
+
+    /* Border */
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color:rgba(255, 255, 255, 0.05);
     border-radius: 10px;
 }
 
+.landpage_section > button {
+    /* Structure */
+    padding: 2px 5px 5px 5px;
+    width: 100px;
+    
+    /* Styles */
+    color: rgb(0, 21, 27);
+    font-weight: 600;
+    background-color: rgba(21, 143, 180, 0.568) ;
+
+    /* Border */
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color:rgb(0, 174, 255);
+    border-radius: 10px;
+}
+
 .landpage_section_left {
     /* Structure */
-    text-align: left;
+    /* text-align: left; */
 }
 
 .landpage_section_right {
     /* Structure */
-    text-align: right;
+    /* text-align: right; */
+    align-self: flex-end;
+}
+
+h2 {
+    /* Style */
+    font-size: 35px;
+}
+
+
+dl {
+    /* Structure */
+    margin-left: 30px;
+}
+
+dt > p{
+    /* Style */
+    font-size: 24px;
 }
 /* --------------------------------------------------------------------------------------------------- */
+
 
 /* Fixed bottom */
 /* --------------------------------------------------------------------------------------------------- */
 .fixed_bottom{
     /* Structure */
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
 
     /* Styles */
     font-size: var(--devices-fixed_bottom-font-size);
+    background-color: rgba(1, 21, 85, 0.603);
+
+    /* Border */
+    border-top: 1px solid rgba(0, 26, 83, 0.336);
 }
 
 .fixed_bottom > a {

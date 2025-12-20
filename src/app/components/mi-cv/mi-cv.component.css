@@ -1,4 +1,11 @@
-/* This is for displaying the pdf using iframe */
+/* This is only so that there is no gap in the bottom of the page */
+.iframe_flexbox {
+    display: flex;
+}
+
 iframe {
+    /* Structure */
     border: 0;
+    height: calc(100vh - 30px); /* 30px Being the height of the navbar */
+    margin-top: 53px;
 }

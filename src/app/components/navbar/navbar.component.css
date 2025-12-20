@@ -1,11 +1,18 @@
 .navbar {
-    /* Structure */
-    padding: var(--devices-navbar-padding);
-    
-    /* Alignment */
+    z-index: 1000;  /* Sets importance of component (show in screen before every other thing) */
+    /* Flexbox */
     justify-content: space-between;
 
-    /* Background color */
+    /* Structure */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 30px;
+    padding: var(--devices-navbar-padding);
+
+    /* Style */
     background-color: rgba(21, 140, 186, 1) !important;
 
     /* Border */
@@ -16,26 +23,26 @@
 
 /* Main navbar link (redirects to "home" page) */
 .navbar_brand {
-    /* Margin - Padding */
+    /* Structure */
     margin-right: var(--devices-navbar_brand-margin-right);
 
-    /* Font style */
+    /* Style */
     color: var(--default-text-color);
     font-size: 22px;
 }
 
 /* This is for navigation html lists */
 .navbar_nav {
-    /* Margin - Padding */
+    /* Structure */
     margin: 5px 0 0 0;
     padding: 0px;
 
-    /* List style */
+    /* Style */
     list-style: none;   /* This remove the "dots" from the html list */
 }
 
 .nav_link {
-    /* Margin - Padding */
+    /* Structure */
     margin-left: 24px;
 
     /* Style */
@@ -46,14 +53,17 @@
 }
 
 .nav_link:hover, .nav_link:focus {
+    /* Style */
     color: rgba(var(--emphasis-color-rgb), 0.8);
 }
 
 .link_on_the_right {
+    /* Structure */
     width: var(--devices-link_on_the_right-width);
 }
 
 .navbar_theme_icon_image {
+    /* Structure */
     width: 22px;
     margin: var(--devices-navbar_theme_icon_image-margin);
 }
