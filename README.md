@@ -13,11 +13,12 @@ This command serves the website locally for all the devices in the local network
 ng serve --host 0.0.0.0
 ```
 
-This command builds the website in the dist folder with the base url set to ```miler2.github.io/my_angular_page/``` instead of just ```/```
+This command builds the website into a single folder so that github can load the website with javascript files.
+```
+ng b
+```
 
-```
-ng b --base-href "https://miler2.github.io/my_angular_page/"
-```
+This command has a bunch of default values to keep in mind, like base-href, and others. With this build, and settings, it just works with ng b, and the next commands below.
 
 ## angular-cli-ghpages
 This is so that I can directly upload my compiled code from the dist/browser folder into the gh-pages branch of my repo and automatically build the page in github.
@@ -29,6 +30,8 @@ ng add angular-cli-ghpages
 ```
 
 This command uploads to my github branch the files with the website. I want to output only the folder "browser" inside the dist folder where we built the website in the command before.
+
+We add the --dir to tell this where to save the files, and we give it the --cname, to let it know what url it will use.
 ```
-npx angular-cli-ghpages --dir=dist/browser
+npx angular-cli-ghpages --dir=dist/browser --cname=miler.com
 ```
