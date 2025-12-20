@@ -23,9 +23,6 @@
 
 /* Main navbar link (redirects to "home" page) */
 .navbar_brand {
-    /* Structure */
-    margin-right: var(--devices-navbar_brand-margin-right);
-
     /* Style */
     color: var(--default-text-color);
     font-size: 22px;

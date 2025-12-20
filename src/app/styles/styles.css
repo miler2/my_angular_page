@@ -40,8 +40,8 @@
         min-height: 100vh;
 
     /* LANDPAGE */
-    --landpage-main_text-color: rgb(24, 210, 210);
-    --landpage-p_text-color: rgb(191, 241, 241);
+    --main_text-color: rgb(24, 210, 210);
+    --p_text-color: rgb(191, 241, 241);
 }
 /* ********************************************************* */
 
@@ -50,7 +50,10 @@
 [device=mobile] {
     /* BODY (general values) */
     /* ---------------------------------------------------- */
-    --devices-body-font-size: 13px;
+    --devices-h1-font-size: 30px;
+    --devices-h2-font-size: 24px;
+    --devices-h3-font-size: 18px;
+    --devices-p-font-size: 13px;
     /* ---------------------------------------------------- */
 
     
@@ -58,33 +61,18 @@
     /* ---------------------------------------------------- */
     /* navbar */
     --devices-navbar-padding: 10px 25px 10px 30px;
-    
-    /* navbar_brand */
-    --devices-navbar_brand-margin-right: 0px;
-    
-    /* nav_link */
     --devices-nav_link-font-size: 15px;
-    
-    /* link_on_the_right */
     --devices-link_on_the_right-width: 70px;
-    
-    /* navbar_theme_icon_image */
     --devices-navbar_theme_icon_image-margin: 5px 0 0 10px;
     /* ---------------------------------------------------- */
 
     
     /* LANDPAGE */
     /* ---------------------------------------------------- */
-    /* h1 */
     --devices-h1-font-weight: 500;
-
-    /* landpage_text */
-    --devices-landpage_intro_text-margin: 100px 30px 0 30px;
-
-    /* landpage_intro */
+    --devices-landpage_intro_text-padding-top: 70px;
     --devices-landpage_intro-font-weight: 350;
-    
-    /* fixed_bottom */
+    --devices-landpage_section-width: 88%; /* With this the sections are level with each other, it's just here because desktop's one is different and if i want to change it */
     --devices-fixed_bottom-font-size: 9px;
     /* ---------------------------------------------------- */
 
@@ -99,41 +87,28 @@
 [device=desktop] {
     /* BODY (general values) */
     /* ---------------------------------------------------- */
-    --devices-body-font-size: 19px;
+    --devices-h1-font-size: 45px;
+    --devices-h2-font-size: 35px;
+    --devices-h3-font-size: 25px;
+    --devices-p-font-size: 19px;
     /* ---------------------------------------------------- */
     
 
     /* NAVBAR */
     /* ---------------------------------------------------- */
-    /* navbar */
     --devices-navbar-padding: 10px 130px 10px 200px;
-    
-    /* navbar_brand */
     --devices-navbar_brand-margin-right: 26px;
-    
-    /* nav_link */
     --devices-nav_link-font-size: 17px;
-    
-    /* link_on_the_right */
-    /* --devices-link_on_the_right-width: 70px; */
-    
-    /* navbar_theme_icon_image */
     --devices-navbar_theme_icon_image-margin: 5px 0 0 15px;
     /* ---------------------------------------------------- */
     
 
     /* LANDPAGE */
     /* ---------------------------------------------------- */
-    /* h1 */
     --devices-h1-font-weight: 500;
-
-    /* landpage_text */
-    --devices-landpage_intro_text-margin: 50px 0 0 0;
-
-    /* landpage_intro */
     --devices-landpage_intro-font-weight: 350;
-    
-    /* fixed_bottom */
+    --devices-landpage_intro_text-padding-top: 70px;
+    --devices-landpage_section-width: 90%;
     --devices-fixed_bottom-font-size: 13px;
     /* ---------------------------------------------------- */
 
@@ -150,11 +125,8 @@ body{
     /* Structure */
     margin: 0px;
 
-    /* Color */
-    /* background-color: var(--body-background-color); */
+    /* Style */
     font-family: var(--font-family);
-    font-size: var(--devices-body-font-size);
-
     background: var(--body-background);
 }
 
@@ -162,24 +134,28 @@ h1{
     /* Structure */
     margin: 0px;
 
-    /* Styles */
+    /* Style */
     font-weight: var(--devices-h1-font-weight);
-    color: var(--landpage-main_text-color);
+    font-size: var(--devices-h1-font-size);
+    color: var(--main_text-color);
 }
 
 h2 {
     margin: 0px;
-    color: var(--landpage-main_text-color);
+    color: var(--main_text-color);
+    font-size: var(--devices-h2-font-size);
 }
 
 h3 {
     margin: 0px;
-    color: var(--landpage-p_text-color);
+    color: var(--p_text-color);
+    font-size: var(--devices-h3-font-size);
 }
 
 p{
     margin: 0px;
-    color: var(--landpage-p_text-color);
+    color: var(--p_text-color);
+    font-size: var(--devices-p-font-size);
 }
 
 .container_fluid {
