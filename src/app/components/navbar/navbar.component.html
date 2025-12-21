@@ -3,17 +3,17 @@
     <a class="navbar_brand" href="">Home</a>
     <ul class="navbar_nav container_fluid">
       <li>
-        <a class="nav_link" href="mi_cv" (click)="update_in_cv()">Mi CV</a>
+        <a class="nav_link" href="mi_cv" (click)="update_in_cv()">CV</a>
       </li>
       <li>
-        <a class="nav_link" href="link_tree">Link tree</a>
+        <a class="nav_link" href="portfolio">portfolio</a>
       </li>
     </ul>
   </div>
-  <div class="container_fluid">
     <button *ngIf="in_cv" (click)="change_cv_language()" class="nav_link link_on_the_right">
       Cambiar idioma CV
     </button>
+  <div class="container_fluid">
     <button (click)="changeTheme()">
       <img src="website_theme.png" alt="Description of my image" class="navbar_theme_icon_image">
     </button>
