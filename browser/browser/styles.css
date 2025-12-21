@@ -40,8 +40,8 @@
         min-height: 100vh;
 
     /* LANDPAGE */
-    --main_text-color: rgb(24, 210, 210);
-    --p_text-color: rgb(191, 241, 241);
+    --main_text-color: rgb(186, 100, 243);
+    --p_text-color: rgb(214, 250, 250);
 }
 /* ********************************************************* */
 
@@ -51,6 +51,7 @@
     /* BODY (general values) */
     /* ---------------------------------------------------- */
     --devices-h1-font-size: 30px;
+    --devices-h1-font-weight: 700;
     --devices-h2-font-size: 24px;
     --devices-h3-font-size: 18px;
     --devices-p-font-size: 13px;
@@ -62,14 +63,13 @@
     /* navbar */
     --devices-navbar-padding: 10px 25px 10px 30px;
     --devices-nav_link-font-size: 15px;
-    --devices-link_on_the_right-width: 70px;
+    --devices-link_on_the_right-width: 800px;
     --devices-navbar_theme_icon_image-margin: 5px 0 0 10px;
     /* ---------------------------------------------------- */
 
     
     /* LANDPAGE */
     /* ---------------------------------------------------- */
-    --devices-h1-font-weight: 500;
     --devices-landpage_intro_text-padding-top: 70px;
     --devices-landpage_intro-font-weight: 350;
     --devices-landpage_section-width: 88%; /* With this the sections are level with each other, it's just here because desktop's one is different and if i want to change it */
@@ -85,9 +85,10 @@
 }
 
 [device=desktop] {
-    /* BODY (general values) */
+    /* Website's general values */
     /* ---------------------------------------------------- */
     --devices-h1-font-size: 45px;
+    --devices-h1-font-weight: 700;
     --devices-h2-font-size: 35px;
     --devices-h3-font-size: 25px;
     --devices-p-font-size: 19px;
@@ -105,10 +106,9 @@
 
     /* LANDPAGE */
     /* ---------------------------------------------------- */
-    --devices-h1-font-weight: 500;
     --devices-landpage_intro-font-weight: 350;
     --devices-landpage_intro_text-padding-top: 70px;
-    --devices-landpage_section-width: 90%;
+    --devices-landpage_section-width: 65%;
     --devices-fixed_bottom-font-size: 13px;
     /* ---------------------------------------------------- */
 
