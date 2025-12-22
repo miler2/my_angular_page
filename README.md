@@ -33,5 +33,5 @@ This command uploads to my github branch the files with the website. I want to o
 
 We add the --dir to tell this where to save the files, and we give it the --cname, to let it know what url it will use.
 ```
-npx angular-cli-ghpages --dir=dist/browser --cname=miler.com
+npx angular-cli-ghpages --dir=dist/browser --cname=miler2.com
 ```
