@@ -72,6 +72,7 @@
     /* ---------------------------------------------------- */
     --devices-landpage_intro_text-padding-top: 70px;
     --devices-landpage_intro-font-weight: 350;
+    --devices-landpage_intro-width: 90%;
     --devices-landpage_section-width: 88%; /* With this the sections are level with each other, it's just here because desktop's one is different and if i want to change it */
     --devices-fixed_bottom-font-size: 9px;
     /* ---------------------------------------------------- */
@@ -108,6 +109,7 @@
     /* ---------------------------------------------------- */
     --devices-landpage_intro-font-weight: 350;
     --devices-landpage_intro_text-padding-top: 70px;
+    --devices-landpage_intro-width: 1000px;
     --devices-landpage_section-width: 65%;
     --devices-fixed_bottom-font-size: 13px;
     /* ---------------------------------------------------- */

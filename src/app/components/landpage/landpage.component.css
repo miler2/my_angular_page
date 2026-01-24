@@ -31,7 +31,7 @@
 .landpage_intro {
     /* Structure */
     margin-bottom: 25px;
-    width: 90%;
+    width: var(--devices-landpage_intro-width);
 
     /* Styles */
     font-weight: var(--devices-landpage_intro-font-weight);
