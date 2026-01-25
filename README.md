@@ -1,5 +1,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
+# This website is my personal CV's exposé
+
 # Full documentation for this project here:
 
 This project is on development. If you want general documentation for angular, or for how to set up an angular instance you can go to this link:
