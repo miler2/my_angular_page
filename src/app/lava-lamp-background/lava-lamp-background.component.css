@@ -3,19 +3,4 @@
     inset: 0;               /* Stretches element to fill entire vewport, it's short for (top: 0; right: 0; bottom: 0; left: 0;) */
     z-index: -1;            /* Not required, but here to make sure this stays behind all other elements */
     pointer-events: none;   /* Not required, but here to make sure the mouse is able to click every button and link properly */
-
-    --x1: 20%;
-    --y1: 20%;
-    --x2: 80%;
-    --y2: 80%;
-
-    background:
-        radial-gradient(circle 50vh at var(--x1) var(--y1),
-            #3b82f6 0%,           /* center */
-            #2563eb 40%,          /* darker edges */
-            rgba(37,99,235,0.6) 50%, /* fade */
-            transparent 53%),
-        radial-gradient(circle 30vh at var(--x2) var(--y2), #ec4899 10%, transparent 55%),
-        radial-gradient(circle 30vh at var(--x3) var(--y3), #0f4446 10%, transparent 55%),
-        linear-gradient(180deg, #13223a, #1e042e);
 }
