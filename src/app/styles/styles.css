@@ -14,12 +14,12 @@
     --emphasis-color-rgb: 0, 0, 0;
 
     /* BODY (general values) */
-    --body-background: 
+    /* --body-background: 
         radial-gradient(circle at top left, #3b82f6, transparent 40%),
         radial-gradient(circle at bottom right, #ec4899, transparent 40%),
         linear-gradient(180deg, #bebebe, #bebebe);
 
-        min-height: 100vh;
+        min-height: 100vh; */
 
     /* LANDPAGE */
     --landpage-main_text-color: #000;
@@ -32,12 +32,12 @@
     --emphasis-color-rgb: 255, 255, 255;
 
     /* BODY (general values) */
-    --body-background: 
+    /* --body-background: 
         radial-gradient(circle at top left, #3b82f6, transparent 40%),
         radial-gradient(circle at bottom right, #ec4899, transparent 40%),
         linear-gradient(180deg, #0f172a, #020617);
 
-        min-height: 100vh;
+        min-height: 100vh; */
 
     /* LANDPAGE */
     --main_text-color: rgb(186, 100, 243);
@@ -130,6 +130,12 @@ body{
     /* Style */
     font-family: var(--font-family);
     background: var(--body-background);
+
+    /* Lava-Lamp */
+    --x1: 20%;
+    --y1: 20%;
+    --x2: 80%;
+    --y2: 80%;
 }
 
 h1{
