@@ -8,6 +8,6 @@ import { LinkTreeComponent } from './components/link-tree/link-tree.component';
 export const routes: Routes = [
     { path: 'portfolio', component: LinkTreeComponent, title: 'portfolio' },
     { path: 'mi_cv', component: MiCvComponent, title: 'Mi CV' },
-    { path: '', component: LandpageComponent, title: 'Landpage' },
+    { path: '', component: LandpageComponent, title: "Miguel's portfolio" },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

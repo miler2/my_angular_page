@@ -28,8 +28,10 @@
 
 [theme=dark] {
     /* general reusable values */
+    --main_text-color: rgb(186, 100, 243);
     --default-text-color: #d6ebff;
-    --emphasis-color-rgb: 255, 255, 255;
+    --p_text-color: rgb(214, 250, 250);
+    --second_main_text-color: #053db6;
 
     /* BODY (general values) */
     --body-background: 
@@ -39,9 +41,8 @@
 
         min-height: 100vh;
 
-    /* LANDPAGE */
-    --main_text-color: rgb(186, 100, 243);
-    --p_text-color: rgb(214, 250, 250);
+    /* Navbar */
+    --emphasis-color-rgb: 255, 255, 255;
 }
 /* ********************************************************* */
 
@@ -109,7 +110,7 @@
     /* ---------------------------------------------------- */
     --devices-landpage_intro-font-weight: 350;
     --devices-landpage_intro_text-padding-top: 70px;
-    --devices-landpage_intro-width: 1000px;
+    --devices-landpage_intro-width: 90vh;
     --devices-landpage_section-width: 65%;
     --devices-fixed_bottom-font-size: 13px;
     /* ---------------------------------------------------- */
