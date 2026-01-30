@@ -13,7 +13,7 @@
     padding: var(--devices-navbar-padding);
 
     /* Style */
-    background-color: rgba(21, 140, 186, 1) !important;
+    background-color: rgba(21, 140, 186, 1);
 
     /* Border */
     border-style: solid;
@@ -24,7 +24,7 @@
 /* Main navbar link (redirects to "home" page) */
 .navbar_brand {
     /* Style */
-    color: var(--default-text-color);
+    color: var(--color_main_link);
     font-size: 22px;
 }
 
@@ -44,14 +44,14 @@
 
     /* Style */
     text-decoration: none;
-    color: rgba(var(--emphasis-color-rgb), 0.65);
+    color: var(--color_links);
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;    /* This is for when I hover in the link */
     font-size: var(--devices-nav_link-font-size);
 }
 
 .nav_link:hover, .nav_link:focus {
     /* Style */
-    color: rgba(var(--emphasis-color-rgb), 0.8);
+    color: var(--color_on_hover);
 }
 
 .link_on_the_right {

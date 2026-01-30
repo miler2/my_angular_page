@@ -22,10 +22,10 @@
 
     /* Style */
     backdrop-filter: blur(100px);
-    background-color: rgba(0, 1, 68, 0.178);
+    background-color: var(--color_background_1);
 
     /* Border */
-    border-bottom: 2px solid rgba(0, 26, 83, 0.336);
+    border-bottom: 2px solid var(--color_border_1);
 }
 
 .landpage_intro {
@@ -52,6 +52,10 @@
     width: 90%;
 }
 
+.landpage_section:nth-child(even) {
+    align-self: flex-end;
+}
+
 .landpage_section{
     /* flexbox */
     display: flex;
@@ -64,53 +68,88 @@
     width: var(--devices-landpage_section-width);
 
     /* Styles */
-    /* background-color: var(--landpage-landpage_sections-background-color); */
-    background-color: rgba(15, 23, 42, 0.226);
+    background-color: var(--color_background_2);
     backdrop-filter: blur(40px);
     text-align: left;
 
     /* Border */
     border-width: 1px 1px 1px 1px;
     border-style: solid;
-    border-color:rgba(255, 255, 255, 0.05);
+    border-color:var(--color_border_2);
     border-radius: 10px;
 }
 
-.landpage_section > button {
+.informacion_personal > dl > dd {
+    margin-left: 7px;
+    padding-bottom: 5px;
+}
+
+table, th, td {
     /* Structure */
-    padding: 2px 5px 5px 5px;
-    width: 100px;
+    text-align: center;
     
-    /* Styles */
-    color: rgb(0, 21, 27);
-    font-weight: 600;
-    background-color: rgba(21, 143, 180, 0.568) ;
-
     /* Border */
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-    border-color:rgb(0, 174, 255);
-    border-radius: 10px;
+    /* I think it fits better without these, but i'll leave them just incase */
+    /* border-top: 2px solid;
+    border-color: var(--color_border_1);
+    border-collapse: collapse; */
 }
 
-/* .landpage_section_left {
-    text-align: left;
-} */
-
-.landpage_section_right {
+table {
     /* Structure */
-    /* text-align: right; */
-    align-self: flex-end;
+    width: var(--table_width);
+
+    /* Styles */
+    color: var(--color_text_1);
+    background-color: var(--color_background_1);
+    
+    /* Border */
+    border: 2px solid;
+    border-color: var(--color_border_1);
 }
 
-dl {
+.table_second_titles > td {
+    /* Styles */
+    color: var(--color_main_text_2);
+}
+
+.table_main_title > th {
+    /* Styles */
+    font-size: var(--table_th1_font_size);
+}
+
+th {
     /* Structure */
-    margin-left: 30px;
+    padding: 5px;
+
+    /* Styles */
+    font-size: var(--table_th2_font_size);
+    color: var(--color_main_text_1);
+}
+
+td {
+    /* Styles */
+    font-size: var(--table_td_font_size);
 }
 
 dt > p{
     /* Style */
     font-size: 24px;
+}
+
+ul {
+    /* Structure */
+    padding-left: 20px;
+}
+
+.experiencia_laboral {
+    /* Structure */
+    padding-top: 5px;
+}
+
+.experiencia_laboral > dd {
+    /* Structure */
+    margin-left: 20px;
 }
 /* --------------------------------------------------------------------------------------------------- */
 
@@ -129,7 +168,7 @@ dt > p{
     background-color: rgba(1, 21, 85, 0.603);
 
     /* Border */
-    border-top: 1px solid rgba(0, 26, 83, 0.336);
+    border-top: 1px solid var(--color_border_1);
 }
 
 .fixed_bottom > a {
